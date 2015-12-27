@@ -1,3 +1,4 @@
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.io.*;
@@ -9,8 +10,16 @@ public class Log4jExample {
     static Logger log = Logger.getLogger(Log4jExample.class.getName());
 
     public static void main(String[] args)throws IOException,SQLException{
-        log.debug("Hello this is a debug message");
-        log.info("Hello this is an info message");
+
+        //optional. sets minimum level for logging
+        log.setLevel(Level.WARN);
+
+        log.trace("Trace Message!");
+        log.debug("Debug Message!");
+        log.info("Info Message!");
+        log.warn("Warn Message!");
+        log.error("Error Message!");
+        log.fatal("Fatal Message!");
     }
 
 }
